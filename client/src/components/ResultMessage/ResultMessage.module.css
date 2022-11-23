@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+.message-container {
+  font-family: 'Cairo', sans-serif;
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 500px;
+  min-height: 150px;
+  top: 100px;
+  left: calc(50vw - 266px);
+  transform: translateY(-500px);
+  opacity: 0;
+  z-index: 99;
+  padding: 20px 15px;
+  border-radius: 10px;
+  color: white;
+  border: 1px solid var(--light-yellow);
+  background-color: var(--strong-black);
+  animation: aparecer .7s ease forwards;
+}
+
+@keyframes aparecer {
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+.hide-container-message {
+  animation: desaparecer 1s ease-in forwards;
+}
+
+@keyframes desaparecer {
+  0% { opacity: 1; transform: translateY(0px); }
+  100% { opacity: 0; transform: translateY(-500px); }
+}
+
+.cancel-button {
+  height: 30px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.cancel-button:hover {
+  filter: brightness(1.5) 
+}
+
+.cb-button {
+  font-size: 0.9rem;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: var(--green);
+  transition: all .3s ease;
+}
+
+.cb-button:hover {
+  color: var(--yellow);
+  background-color: var(--red);
+}
+
+.title {
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.message {
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.error-message {
+  color: var(--light-red);
+}
+
+.success-message {
+  color: var(--light-green);
+}
+
+/* ADAPTACIÓN PARA PANTALLAS MENORES DE 700PX */
+
+@media screen and (max-width: 700px) {
+  .message-container {
+    width: 210px;
+    padding: 5px 10px;
+    left: calc(50vw - 116px);
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .message {
+    font-size: .9rem;
+  }
+
+  .cb-button {
+    font-size: .75rem;
+    padding: 5px 10px;
+  }
+
+  .cancel-button {
+    height: 25px;
+    width: 20px;
+  }
+}

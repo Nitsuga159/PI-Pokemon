@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+*, 
+*::after, 
+*::before {
+  padding: 0;
+  margin: 0;
+}
+
+/* CARD CONTAINER */
+
+.cards-container {
+  display: grid;
+  justify-content: center;
+  padding: 15px 0;
+  grid-template-columns: repeat(auto-fit, 300px);
+  row-gap: 45px;
+  column-gap: 25px;
+  margin-bottom: 30px;
+  z-index: 99;
+}
+
+.container-notfound {
+  font-family: 'Cairo', sans-serif;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: calc(50vh - 200px);
+  left: calc(50vw - 200px);
+  text-align: center;
+}
+
+.notfound-image {
+  height: 300px;
+}
+
+.notfound-description {
+  margin-top: 30px;
+  font-size: 2rem;
+  color: var(--yellow);
+}
+
+@media screen and (max-width: 700px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, 1fr);
+    margin-bottom: 15px;
+  }
+
+  .container-notfound {
+    top: calc(50vh - 100px);
+  }
+
+  .notfound-image {
+    height: 200px;
+  }
+
+  .notfound-description {
+    margin-top: 30px;
+    font-size: 1rem;
+    text-align: center;
+    word-break: break-all;
+    color: var(--yellow);
+  }
+}

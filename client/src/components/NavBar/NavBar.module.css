@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+/* NAVBAR */
+
+.navbar-container {
+  height: 15px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  background-color: var(--normal-red);
+  box-shadow: 0px 2px white;
+  z-index: 98;
+}
+
+.container-register-form {
+  top: calc(50% - 150px);
+  left: calc(50% - 250px);
+  position: fixed;
+  z-index: 99;
+}
+
+.register-form, .login-form {
+  font-family: 'Cairo', sans-serif;
+  width: 500px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: var(--black);
+  border: 2px solid white;
+  border-radius: 15px;
+  opacity: 0;
+  transform: translateY(-100px);
+  animation: aparecer .5s ease forwards;
+}
+
+@keyframes aparecer {
+  0% {
+    transform: translateY(-100px);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.register-form *, .login-form * {
+  text-align: center;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+  width: 70%;
+}
+
+.register-form > h3 {
+  color: white;
+  font-size: 2rem;
+}
+
+.register-form > p {
+  color: white;
+  margin: 0;
+}
+
+.register-form > input[type=text] {
+  font-size: 1.1rem;
+  padding: 8px 5px;
+  outline: none;
+  box-shadow: 0px 5px var(--black);
+}
+
+.register-form > input[type=submit], .login-form > input[type=submit] {
+  padding: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+  background-color: var(--light-green);
+  box-shadow: 0px 4px var(--green);
+  cursor: pointer;
+  transition: filter .3s ease;
+}
+
+.register-form > input[type=submit]:hover, .login-form > input[type=submit]:hover {
+  filter: contrast(1.5);
+}
+
+.register-login * {
+  display: inline;
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: white;
+  margin-right: 20px;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transition: color .3s ease;
+}
+
+.register-login *:hover {
+  color: var(--light-black);
+}
+
+.cancel {
+  width: auto;
+  top: 0;
+  right: 15px;
+  height: 35px;
+  position: absolute;
+  cursor: pointer;
+  filter: contrast(1) drop-shadow(3px 1px var(--black));
+  transition: filter .6s ease;
+}
+
+.cancel:hover {
+  filter: contrast(2) drop-shadow(3px 1px var(--black))
+}
+
+.hide {
+  display: none;
+}
+
+.links * {
+  margin-left: 15px;
+  font-family: 'Cairo', sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+  color: white;
+  text-decoration: none;
+  transition: color .3s ease;
+}
+
+.links *:hover {
+  color: var(--light-yellow);
+}
+
+/* ADAPTACIÓN PARA PANTALLAS MENORES DE 700PX */
+
+@media screen and (max-width: 700px) {
+  .navbar-container {
+    padding: 25px 0px;
+  }
+
+  .links, .register-login {
+    text-align: center;
+  }
+
+  .links * {
+    font-size: 0.8rem;
+    margin-left: 5px;
+  }
+
+  .register-login * {
+    font-size: 0.9rem;
+    margin-right: 5px;
+  }
+
+  .container-register-form {
+    left: calc(50% - 125px);
+  }
+
+  .register-form {
+    width: 250px;
+  }
+
+  .login-form {
+    width: 250px;
+    height: 150px;
+  }
+
+  .register-form > h3 {
+    font-size: 1.3rem;
+  }
+
+  .register-form > p {
+    font-size: .9rem;
+  }
+
+  .register-form > input[type=text] {
+    font-size: 1.1rem;
+    padding: 5px;
+  }
+
+  .register-form > input[type=submit], .login-form > input[type=submit] {
+    font-size: .9rem;
+    padding: 5px;
+  }
+}

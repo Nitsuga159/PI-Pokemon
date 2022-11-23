@@ -1,0 +1,10 @@
+/* LOADING */
+
+.loading {
+  position: absolute;
+  height: 150px;
+  top: calc(50vh - 75px);
+  left: calc(50vw - 75px);
+  transform: rotate(0deg);
+}
+

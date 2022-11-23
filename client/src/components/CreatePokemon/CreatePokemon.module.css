@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+*, 
+*::after, 
+*::before {
+  padding: 0;
+  margin: 0;
+}
+
+.container-form {
+  font-family: 'Cairo', sans-serif;
+  min-height: calc(100vh - 65px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-access-message {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  color: var(--yellow);
+  filter: brightness(1.2);
+}
+
+/* ADAPTACIÓN PARA PANTALLAS MENORES DE 700PX */
+
+@media screen and (max-width: 700px) {
+  .container-form {
+    padding-bottom: 120px;
+  }
+
+  .no-access-message {
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: var(--yellow);
+    filter: brightness(1.2);
+  }
+}

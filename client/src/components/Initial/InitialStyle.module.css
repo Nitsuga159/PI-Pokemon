@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cairo&display=swap');
+
+.rect {
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100vh;
+  width: 50px;
+  background-color: var(--light-red);
+}
+
+.sub-container {
+  background-color: var(--black);
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr minmax(500px, 1fr);
+  overflow-x: hidden;
+}
+
+.welcome-container {
+  padding: 0 0 0 10px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 60px;
+}
+
+.title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 3.6rem;
+  text-align: center;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  color:var(--yellow);
+  text-shadow: 0px 5px var(--strong-yellow);
+  z-index: 99;
+}
+
+.blue {
+  color:var(--light-blue);
+  text-shadow: 0px 5px var(--blue);
+  z-index: 99;
+}
+
+.red {
+  color:var(--light-red);
+  text-shadow: 0px 5px var(--red);
+  z-index: 99;
+}
+
+.parrafo {
+  width: 85%;
+  font-family: 'Archivo Black', sans-serif;
+  color:white;
+  font-size: 1.7rem;
+  z-index: 99;
+}
+
+.iniciar {
+  font-weight: bold;
+  width: 300px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Cairo', sans-serif;
+  padding: 5px 30px;
+  margin-top: 70px;
+  border-radius: 5px;
+  font-size: 2rem;
+  color: #FFF;
+  text-decoration: none;
+  background-color: var(--green);
+  text-shadow: 0px -2px var(--black);
+  box-shadow: 0px 5px 2px black;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  z-index: 99;
+ }
+ 
+ .iniciar:hover, .iniciar:active {
+  -webkit-transform: translate(0px,5px);
+  -ms-transform: translate(0px,5px);
+  transform: translate(0px,5px);
+  letter-spacing: 2px;
+  box-shadow: 0px 0px 5px var(--green);
+  background-color: var(--light-green);
+  cursor: pointer;
+ }
+
+.fondo {
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  width: 45%;
+  object-fit: cover;
+  border-radius: 50% 0 0 50%;
+  box-shadow: -20px 0 var(--light-red);
+  z-index: 99;
+}
+
+/* LOGOS CON ABSOLUTE */
+
+.logo {
+  position: absolute;
+  top: -20px;
+  left: 50px;
+  width: 350px;
+  z-index: 99;
+}
+
+.github, .linkedin {
+  top: calc(100% - 80px);
+  position: absolute;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid var(--blue);
+  transition: filter .3s ease;
+  z-index: 99;
+}
+
+.github:hover, .linkedin:hover {
+  filter: brightness(2);
+}
+
+.github {
+  left: 70px;
+}
+
+.linkedin {
+  left: 180px;
+}
+
+/* ADAPTACIÓN PARA PANTALLAS MENORES DE 1000PX */
+
+@media screen and (max-width: 1000px) {
+  .logo {
+    height: 150px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    text-shadow: 0px 2px var(--strong-yellow);
+  }
+
+  .blue {
+    text-shadow: 0px 2px var(--blue);
+  }
+
+  .red {
+    text-shadow: 0px 2px var(--red);
+  }
+
+  .parrafo {
+    font-size: 1.4rem;
+  }
+
+  .iniciar {
+    width: 200px;
+    height: 30px;
+    font-size: 1.5rem;
+  }
+}
+
+/* ADAPTACIÓN PARA PANTALLAS MENORES DE 700PX */
+
+@media screen and (max-width: 700px) {
+  .logo {
+    left: 0;
+    height: 120px;
+  }
+
+  .sub-container {
+    background: linear-gradient(90deg, rgba(25, 25, 25, 0.62), rgba(0, 0, 0, 0.592)), url("../../images/fondo-pokemon.gif");
+    background-size: contain;
+  }
+
+  .welcome-container {
+    width: calc(100vw - 90px);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    text-shadow: 0px 2px var(--strong-yellow);
+  }
+
+  .blue {
+    text-shadow: 0px 2px var(--blue);
+  }
+
+  .red {
+    text-shadow: 0px 2px var(--red);
+  }
+
+  .parrafo {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .iniciar {
+    width: 200px;
+    height: 30px;
+    font-size: 1.5rem;
+  }
+
+  .fondo {
+    display: none;
+  }
+}
+
+/* ADAPTACIÓN PARA PANTALLAS MENORES DE 700PX */
+
+@media screen and (max-width: 450px) {
+  .logo {
+    left: -50px;
+    top: -10px;
+    height: 70px;
+  }
+
+  .sub-container {
+    background: linear-gradient(90deg, rgba(25, 25, 25, 0.62), rgba(0, 0, 0, 0.592)), url("../../images/fondo-pokemon.gif");
+    background-size: contain;
+  }
+
+  .welcome-container {
+    width: calc(100vw - 90px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    margin: 30px 0;
+    font-size: 1.4rem;
+    text-shadow: 0px 2px var(--strong-yellow);
+  }
+
+  .blue {
+    text-shadow: 0px 2px var(--blue);
+  }
+
+  .red {
+    text-shadow: 0px 2px var(--red);
+  }
+
+  .parrafo {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .iniciar {
+    margin-top: 30px;
+    width: 100px;
+    height: 25px;
+    padding: 5px;
+    font-size: 1.2rem;
+  }
+
+  .github, .linkedin {
+    height: 40px;
+    top: calc(100vh - 55px)
+  }
+
+  .github {
+    left: 60px;
+  }
+
+  .linkedin {
+    left: 120px;
+  }
+}

@@ -1,0 +1,205 @@
+
+.form-pokemon {
+  font-family: 'Cairo', sans-serif;
+  position: absolute;
+  width: 1000px;
+  height: 700px;
+  top: calc(50vh - 350px);
+  left: calc(50vw - 500px);
+  display: grid;
+  grid-template-areas: 
+  "one    two"
+  "submit submit";
+  grid-template-rows: 1fr 50px;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 15px;
+  background-color: var(--light-black);
+  opacity: 0;
+  transform: translateY(-100px);
+  animation: aparecer-form .6s ease-in forwards;
+  z-index: 97;
+}
+
+.hide-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+@keyframes aparecer-form {
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.container-inputs-one {
+  grid-area: one;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: aparecer-inputs 1s ease forwards;
+}
+
+.container-inputs-two {
+  grid-area: two;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: aparecer-inputs 1s ease forwards;
+}
+
+@keyframes aparecer-inputs {
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.container-select {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+}
+
+.container-select > h3 {
+  color: white;
+  margin: 10px 0;
+}
+
+.container-select > select {
+  text-align: center;
+  width: 70%;
+  font-size: 1.1rem;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--light-gray);
+  color: var(--light-yellow);
+  box-shadow: 0px 5px var(--black);
+}
+
+.container-select > select:focus {
+  outline: none;
+}
+
+.error {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--light-red);
+}
+
+.submit-button {
+  grid-area: submit;
+  font-weight: bold;
+  color: white;
+  background-color: var(--normal-red);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 0px 0px 15px 15px;
+  transition: all .4s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--red);
+}
+
+.list-types {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.list-types > li {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.list-types > li svg {
+  height: 25px;
+  cursor: pointer;
+}
+
+.list-types > li svg:hover {
+  fill: var(--red);
+}
+
+.pikachu-image {
+  height: 180px;
+  position: absolute;
+  top: calc(100% - 175px);
+  left: -65px;
+}
+
+/* ADAPTACIÓN PARA PANTALLAS MENORES DE 100PX */
+
+@media screen and (max-width: 1000px) {
+  .form-pokemon {
+    width: 700px;
+    left: calc(50vw - 350px);
+  }
+}
+
+/* ADAPTACIÓN PARA PANTALLAS MENORES DE 700PX */
+
+@media screen and (max-width: 700px) {
+  .form-pokemon {
+    width: 270px;
+    left: calc(50vw - 135px);
+    top: 80px;
+  }
+
+  .container-select > h3 {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .container-select > select {
+    font-size: .8rem;
+  }
+
+  .hide-button {
+    height: 20px;
+    width: 20px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .error {
+    width: 95%;
+    text-align: center;
+    font-size: .7rem;
+    letter-spacing: 1px;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+  }
+
+  .pikachu-image {
+    height: 80px;
+    position: absolute;
+    top: calc(100% - 80px);
+    left: -25px;
+  }
+
+  .list-types > li {
+    font-size: .8rem;
+    
+  }
+
+  .list-types > li svg {
+    height: 15px;
+  }
+}

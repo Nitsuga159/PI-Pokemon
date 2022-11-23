@@ -1,0 +1,14 @@
+export const GET_POKEMONS = "GET_POKEMONS";
+export const GET_POKEMON = "GET_POKEMON";
+export const GET_TYPES = "GET_TYPES";
+export const GET_USER_POKEMONS = "GET_USER_POKEMONS";
+export const SET_FILTER_OPTION = "SET_FILTER_OPTION";
+export const SET_SORT_OPTION = "SET_SORT_OPTION";
+export const SET_PAGE = "SET_PAGE";
+export const CREATE_POKEMON = "CREATE_POKEMON";
+export const CREATE_USER = "CREATE_USER";
+export const LOGIN_USER = "LOGIN_USER";
+export const LOGOUT_USER = "LOGOUT_USER";
+export const INCREMENT_PAGE = "INCREMENT_PAGE";
+export const DECREMENT_PAGE = "DECREMENT_PAGE";
+export const RESET_POKEMONS = "RESET_POKEMONS";

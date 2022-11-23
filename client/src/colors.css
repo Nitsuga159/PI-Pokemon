@@ -1,0 +1,26 @@
+:root {
+  --shiny-red: rgb(250, 195, 195);
+  --normal-red: rgb(185, 62, 62);
+  --red: rgb(110, 9, 9);
+  --light-red: rgb(226, 102, 102);
+  --black: rgb(25, 25, 25);
+  --strong-black:rgb(13, 13, 13); 
+  --light-black: rgb(36, 36, 36);
+  --light-green: rgb(0, 150, 0);
+  --green: rgb(0, 120, 0);
+  --gray: rgb(65, 62, 62);
+  --light-gray: rgb(91, 91, 91);
+  --blue: #252be0;
+  --light-blue: #5e66ff;
+  --shiny-blue: #b2e0f9;
+  --strong-blue: #172833;
+  --strong-cyan: #365658;
+  --strong-yellow: rgb(248, 170, 0);
+  --yellow: rgb(252, 200, 44);
+  --light-yellow: rgb(255, 230, 170);
+  --light-brown-card: rgb(255, 241, 223);
+  --light-yellow-card: rgb(255, 224, 183);
+  --yellow-card: rgb(108, 90, 53);
+  --orange: rgb(84, 42, 0);
+  --light-brown: rgb(195, 184, 163);
+}

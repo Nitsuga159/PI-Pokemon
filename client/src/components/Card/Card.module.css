@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+*, 
+*::after, 
+*::before {
+  padding: 0;
+  margin: 0;
+}
+
+.card-container {
+  font-family: 'Acme', sans-serif;
+  text-decoration: none;
+  width: 250px;
+  min-height: 350px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 15px;
+  user-select: none;
+  opacity: 0;
+  transform: translateY(-40px);
+  border: 3px solid  var(--black);
+  background: var(--light-black);
+  transition: all .5s ease;
+  animation: aparecer .7s ease forwards;
+}
+
+@keyframes aparecer {
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.card-container:hover {
+  background-color: var(--strong-black)
+}
+
+.card-image {
+  height: 160px;
+  width: 160px;
+}
+
+.card-name {
+  width: 90%;
+  min-height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.9rem;
+  text-shadow: 0px 5px black;
+  letter-spacing: 1.5px;
+  word-break: break-all;
+  color: white;
+}
+
+.types-container {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.type {
+  font-size: 1.35rem;
+  letter-spacing: 2px;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px black;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+/* BUTTONS */
+
+.buttons {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buttons button {
+  width: 80px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  box-shadow: 0px 4px var(--black);
+  cursor: pointer;
+}
+
+.eliminar {
+  background-color: var(--normal-red);
+}
+
+.editar {
+  background-color: var(--light-green);
+}
+
+/* TYPES COLOR */
+.grass {
+  background-color: green;
+}
+
+.fire, .dragon, .fighting {
+  background-color: red;
+}
+
+.electric {
+  background-color: rgb(251, 184, 2);
+}
+
+.water, .ice {
+  background-color: rgb(132, 203, 227);
+}
+
+.dark, .shadow, .rock {
+  background-color: rgb(8, 8, 8);
+}
+
+.unknown, .steel, .normal {
+  background-color: rgb(95, 90, 90);
+}
+
+.ground {
+  background-color: burlywood;
+}
+
+.ghost, .psychic, .flying {
+  background-color: rgb(85, 190, 162);
+}
+
+.poison {
+  background-color: rgb(62, 3, 62);
+}
+
+.bug {
+  background-color: purple;
+}
+
+.fairy {
+  background-color: coral;
+}
+
+.delete-by-admin {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 15px;
+  width: 15px;
+  opacity: 0;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.delete-by-admin:hover {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+/* ADAPTACIÓN PARA PANTALLAS MENORES DE 700PX */
+
+@media screen and (max-width: 700px) {
+  .card-container {
+    width: 150px;
+    min-height: 200px;
+    margin: 0 auto;
+  }
+
+  .card-image {
+    height: 120px;
+    width: 120px;
+  }
+  
+  .card-name {
+    font-size: 1.3rem;
+    padding: 5px 0;
+  }
+
+  .type {
+    font-size: .9rem;
+  }
+
+  .buttons button {
+    width: 60px;
+    font-size: .9rem;
+  }
+}

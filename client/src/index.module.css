@@ -1,0 +1,6 @@
+.root-container {
+  min-height: calc(100vh - 65px);
+  background: linear-gradient(90deg, rgba(29, 18, 4, 0.555) 50%, rgba(43, 32, 2, 0.567)), url("./images/pokemon-background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
