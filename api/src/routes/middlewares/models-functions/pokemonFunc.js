@@ -40,11 +40,14 @@ const findPokemon = async (request, method) => {
 };
 
 const getPokemons = async (name) => {
+  console.log("hola");
   if (name) {
     let pokeApi = null;
     try {
       pokeApi = await axios.get(`${API}/${name}`);
     } catch {}
+
+    console.log(pokeApi);
 
     let pokesCreated = await findPokemon({ where: { name } }, "findAll");
 
