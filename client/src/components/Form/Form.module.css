@@ -65,7 +65,7 @@
 
 .container-select {
   width: 100%;
-  height: 120px;
+  height: 100px;
   text-align: center;
 }
 
@@ -155,9 +155,14 @@
 
 @media screen and (max-width: 700px) {
   .form-pokemon {
-    width: 270px;
-    left: calc(50vw - 135px);
-    top: 80px;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    top: 55px;
+    left: 0;
+    border-radius: 0;
+    background-color: rgba(36, 36, 36);
   }
 
   .container-select > h3 {
@@ -177,7 +182,7 @@
   }
 
   .error {
-    width: 95%;
+    width: 100%;
     text-align: center;
     font-size: .7rem;
     letter-spacing: 1px;
@@ -185,13 +190,16 @@
 
   .submit-button {
     font-size: 1rem;
+    margin-top: 5px;
+    padding: 10px 0 5px;
+    border-radius: 0;
   }
 
   .pikachu-image {
-    height: 80px;
+    height: 70px;
     position: absolute;
-    top: calc(100% - 80px);
-    left: -25px;
+    top: calc(100% - 75px);
+    left: 0px;
   }
 
   .list-types > li {

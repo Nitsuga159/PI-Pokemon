@@ -131,34 +131,55 @@
   display: none;
 }
 
-.links * {
-  margin-left: 15px;
+.links svg {
+  height: 35px;
+  width: 35px;
   font-family: 'Cairo', sans-serif;
   letter-spacing: 1px;
   font-size: 1.3rem;
-  color: white;
+  fill: white;
   text-decoration: none;
-  transition: color .3s ease;
+  transition: fill .3s ease;
 }
 
-.links *:hover {
-  color: var(--light-yellow);
+.links {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links svg:hover {
+  fill: var(--yellow);
+}
+
+.perfil {
+  transform: scale(1.15);
+}
+
+.cls-1 {
+  fill:none;
 }
 
 /* ADAPTACIÓN PARA PANTALLAS MENORES DE 700PX */
 
 @media screen and (max-width: 700px) {
   .navbar-container {
-    padding: 25px 0px;
+    padding: 20px 0px;
   }
 
-  .links, .register-login {
+  .register-login {
     text-align: center;
   }
 
-  .links * {
-    font-size: 0.8rem;
-    margin-left: 5px;
+  .links {
+    margin-left: 10px;
+    width: 100px;
+  }
+
+  .links svg {
+    height: 25px;
+    width: 25px;
   }
 
   .register-login * {

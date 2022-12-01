@@ -5,7 +5,6 @@ import notFound from "../../images/pokemon-notfound.png";
 import notFoundSearch from "../../images/pokemon-notfound-search.png";
 import actionsCreators from "../../actions";
 import options from "./options.js";
-import sRoot from "../../index.module.css";
 import s from "./Home.module.css";
 import ResultMessage from "../ResultMessage/ResultMessage.jsx";
 import Loading from "../Loading/Loading.jsx";
@@ -65,7 +64,7 @@ export default function Home() {
 
   const handlerSubmit = (e) => {
     e.preventDefault();
-
+    dispatch(resetPokemons());
     dispatch(getPokemons(search));
   };
 
@@ -124,7 +123,7 @@ export default function Home() {
 
   if (pokemons.result === "not-found")
     return (
-      <div className={sRoot["root-container"]}>
+      <>
         {SearchBar}
         <div className={s["container-notfound"]}>
           <img
@@ -136,12 +135,12 @@ export default function Home() {
             No se encontró ningún pokemon...
           </h2>
         </div>
-      </div>
+      </>
     );
 
   if (!pokemons.length)
     return (
-      <div className={sRoot["root-container"]}>
+      <>
         {messageSettings.show && !pokemons.called && (
           <ResultMessage
             type={messageSettings.type}
@@ -154,15 +153,15 @@ export default function Home() {
         )}
         {SearchBar}
         <Loading />
-      </div>
+      </>
     );
 
   return (
-    <div className={sRoot["root-container"]}>
+    <>
       {SearchBar}
       <Paginate mapPokemons={mapPokemons} page={page} />
       <div className={s["cards-container"]}>{mapPokemons()}</div>
       <Paginate mapPokemons={mapPokemons} page={page} />
-    </div>
+    </>
   );
 }

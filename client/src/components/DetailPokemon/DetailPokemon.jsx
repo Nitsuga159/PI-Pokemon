@@ -4,7 +4,6 @@ import actionsCreators from "../../actions";
 import notFound from "../../images/pokemon-notfound.png";
 import pokeball from "../../images/pokeball.png";
 import Bar from "./Bar/Bar.jsx";
-import sRoot from "../../index.module.css";
 import s from "./DetailPokemon.module.css";
 import Loading from "../Loading/Loading.jsx";
 
@@ -21,15 +20,13 @@ export default function DetailPokemon({ match }) {
 
   if (pokemon.id?.toString() !== id)
     return (
-      <div
-        className={`${s["card-detail-container"]} ${sRoot["root-container"]}`}
-      >
+      <div className={s["card-detail-container"]}>
         <Loading />
       </div>
     );
 
   return (
-    <div className={`${s["card-detail-container"]} ${sRoot["root-container"]}`}>
+    <div className={s["card-detail-container"]}>
       <div className={s["subcontainer"]}>
         <div className={s["container-one"]}>
           <h3 className={s["title"]}>{pokemon.name.toUpperCase()}</h3>

@@ -13,11 +13,10 @@ import {
   SET_SORT_OPTION,
   SET_PAGE,
 } from "../reducer/actions.js";
-
-const URL = "http://localhost:3001";
+import API from "../api.js";
 
 const getPokemons = (name) => {
-  let url = `${URL}/pokemons`;
+  let url = `${API}/pokemons`;
   if (name) url += `?name=${name}`;
 
   return function (dispatch) {
@@ -35,7 +34,7 @@ const getPokemons = (name) => {
 
 const getPokemon = (id) => {
   return function (dispatch) {
-    fetch(`${URL}/pokemons/${id}`)
+    fetch(`${API}/pokemons/${id}`)
       .then((res) => (res.ok ? res.json() : Promise.reject(res)))
       .then((res) => dispatch({ type: GET_POKEMON, payload: res }))
       .catch((err) => err.json().then((err) => console.log(err)));
@@ -51,7 +50,7 @@ const createUser = (data) => {
   };
 
   return function (dispatch) {
-    fetch(`${URL}/register`, options)
+    fetch(`${API}/register`, options)
       .then((res) => (res.ok ? res.json() : Promise.reject(res)))
       .then((res) => dispatch({ type: CREATE_USER, payload: res }))
       .catch((err) =>
@@ -76,7 +75,7 @@ const login = (data) => {
   };
 
   return function (dispatch) {
-    fetch(`${URL}/login`, options)
+    fetch(`${API}/login`, options)
       .then((res) => (res.ok ? res.json() : Promise.reject(res)))
       .then((res) => dispatch({ type: LOGIN_USER, payload: res }))
       .catch((err) =>
@@ -94,7 +93,7 @@ const logout = () => ({ type: LOGOUT_USER });
 
 const getTypes = () => {
   return function (dispatch) {
-    fetch(`${URL}/types`)
+    fetch(`${API}/types`)
       .then((res) => (res.ok ? res.json() : Promise.reject(res)))
       .then((res) => dispatch({ type: GET_TYPES, payload: res }))
       .catch((err) => err.json().then((err) => console.log(err)));
@@ -103,7 +102,7 @@ const getTypes = () => {
 
 const getUserPokemons = (email) => {
   return function (dispatch) {
-    fetch(`${URL}/pokemons/created?email=${email}`)
+    fetch(`${API}/pokemons/created?email=${email}`)
       .then((res) => (res.ok ? res.json() : Promise.reject(res)))
       .then((res) => dispatch({ type: GET_USER_POKEMONS, payload: res }))
       .catch((err) => err.json().then((err) => console.log(err)));

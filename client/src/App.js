@@ -3,6 +3,7 @@ import CreatePokemon from "./components/CreatePokemon/CreatePokemon.jsx";
 import Home from "./components/Home/Home.jsx";
 import Initial from "./components/Initial/Initial.jsx";
 import NavBar from "./components/NavBar/NavBar.jsx";
+import "./App.css";
 import "./colors.css";
 import DetailPokemon from "./components/DetailPokemon/DetailPokemon.jsx";
 import Pokemons from "./components/Pokemons/Pokemons.jsx";

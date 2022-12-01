@@ -21,9 +21,10 @@
 .welcome-container {
   padding: 0 0 0 10px;
   width: 90%;
+  height: 90vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin-left: 60px;
 }
@@ -68,7 +69,7 @@
   justify-content: center;
   align-items: center;
   font-family: 'Cairo', sans-serif;
-  padding: 5px 30px;
+  padding: 3px 30px;
   margin-top: 70px;
   border-radius: 5px;
   font-size: 2rem;
@@ -108,31 +109,31 @@
 .logo {
   position: absolute;
   top: -20px;
-  left: 50px;
+  right: 0px;
   width: 350px;
   z-index: 99;
 }
 
 .github, .linkedin {
-  top: calc(100% - 80px);
+  top: calc(100% - 55px);
   position: absolute;
-  height: 60px;
+  height: 40px;
   border-radius: 50%;
-  border: 3px solid var(--blue);
+  border: 3px solid white;
   transition: filter .3s ease;
   z-index: 99;
 }
 
 .github:hover, .linkedin:hover {
-  filter: brightness(2);
+  filter: brightness(.5);
 }
 
 .github {
-  left: 70px;
+  left: 60px;
 }
 
 .linkedin {
-  left: 180px;
+  left: 120px;
 }
 
 /* ADAPTACIÓN PARA PANTALLAS MENORES DE 1000PX */
@@ -183,6 +184,8 @@
     width: calc(100vw - 90px);
     display: flex;
     flex-direction: column;
+    padding: 0;
+    margin: 0;
     margin-bottom: 100px;
   }
 
@@ -218,10 +221,15 @@
 /* ADAPTACIÓN PARA PANTALLAS MENORES DE 700PX */
 
 @media screen and (max-width: 450px) {
+  .rect {
+    display: none;
+  }
+
   .logo {
-    left: -50px;
-    top: -10px;
-    height: 70px;
+    left: calc(50vw - 100px);
+    top: 20px;
+    height: 100px;
+    width: 200px;
   }
 
   .sub-container {
@@ -230,9 +238,12 @@
   }
 
   .welcome-container {
-    width: calc(100vw - 90px);
+    width: 100vw;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
   }
 
   .title {
@@ -263,15 +274,15 @@
   }
 
   .github, .linkedin {
-    height: 40px;
-    top: calc(100vh - 55px)
+    height: 30px;
+    top: calc(100vh - 40px)
   }
 
   .github {
-    left: 60px;
+    left: 5px;
   }
 
   .linkedin {
-    left: 120px;
+    left: 50px;
   }
 }

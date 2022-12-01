@@ -1,0 +1,5 @@
+body {
+  background: linear-gradient(90deg, rgba(10, 10, 10, 0.699), rgba(42, 28, 4, 0.536)), url("./images/pokemon-background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}

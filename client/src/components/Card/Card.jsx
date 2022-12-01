@@ -5,6 +5,7 @@ import notFound from "../../images/pokemon-notfound.png";
 import Svg from "../Svg/Svg.jsx";
 import s from "./Card.module.css";
 import actionsCreators from "../../actions";
+import API from "../../api.js";
 
 const { getPokemons } = actionsCreators;
 
@@ -37,7 +38,7 @@ export default function Card({
 
     if (choice === "pokemon") {
       fetch(
-        `http://localhost:3001/pokemons/admin?choice=${choice}&identificator=${id}`,
+        `${API}/pokemons/admin?choice=${choice}&identificator=${id}`,
         options
       )
         .then((res) => (res.ok ? res.json() : Promise.reject(res)))
@@ -52,7 +53,7 @@ export default function Card({
       let blocked = window.confirm("¿Quieres bloquear al usuario?");
 
       fetch(
-        `http://localhost:3001/pokemons/admin?choice=${choice}&identificator=${userEmail}&blocked=${blocked}`,
+        `${API}/pokemons/admin?choice=${choice}&identificator=${userEmail}&blocked=${blocked}`,
         options
       )
         .then((res) => (res.ok ? res.json() : Promise.reject(res)))

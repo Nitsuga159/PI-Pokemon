@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import actionsCreators from "../../actions/index.js";
 import Form from "../Form/Form.jsx";
 import Card from "../Card/Card.jsx";
-import sRoot from "../../index.module.css";
 import s from "./Pokemons.module.css";
 import ResultMessage from "../ResultMessage/ResultMessage.jsx";
+import API from "../../api.js";
 
 const { getTypes, getUserPokemons, getPokemons } = actionsCreators;
 
@@ -57,7 +57,7 @@ export default function Pokemons() {
       if (inputs[key])
         data[key] = isNaN(+inputs[key]) ? inputs[key] : +inputs[key];
 
-    return fetch("http://localhost:3001/pokemons", {
+    return fetch(`${API}/pokemons`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -91,7 +91,7 @@ export default function Pokemons() {
       body: JSON.stringify({ email, password }),
     };
 
-    fetch(`http://localhost:3001/pokemons/${messageSettings.id}`, options)
+    fetch(`${API}/pokemons/${messageSettings.id}`, options)
       .then((res) => (res.ok ? res.json() : Promise.reject(res)))
       .then((res) => {
         dispatch(getPokemons());
@@ -120,7 +120,7 @@ export default function Pokemons() {
 
   if (!isLogin || !pokemons?.length)
     return (
-      <div className={`${s["container-pokemons"]} ${sRoot["root-container"]}`}>
+      <div className={s["container-pokemons"]}>
         <h2 className={s["no-access-message"]}>
           {isLogin
             ? "No tenés pokemons creados..."
@@ -131,7 +131,7 @@ export default function Pokemons() {
     );
 
   return (
-    <div className={`${s["container-pokemons"]} ${sRoot["root-container"]}`}>
+    <div className={s["container-pokemons"]}>
       <div className={s["subcontainer-pokemons"]}>
         {pokemons?.map((p) => (
           <Card

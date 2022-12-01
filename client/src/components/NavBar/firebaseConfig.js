@@ -1,5 +1,5 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCv8ZZeJVB7coOuV49L9S671COGwIiq4Yc",
+  apiKey: process.env.REACT_APP_APYKEY,
   authDomain: "apipokemons-7776a.firebaseapp.com",
   projectId: "apipokemons-7776a",
   storageBucket: "apipokemons-7776a.appspot.com",

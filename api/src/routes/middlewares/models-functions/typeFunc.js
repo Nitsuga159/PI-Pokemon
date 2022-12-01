@@ -1,5 +1,7 @@
+const { json } = require("body-parser");
+
 const { Type } = require("../../../db.js"),
-  axios = require("axios"),
+  fetch = require("node-fetch"),
   API = "https://pokeapi.co/api/v2/type";
 
 const getTypes = async () => {
@@ -7,8 +9,9 @@ const getTypes = async () => {
 
   if (resultDb.length) return resultDb;
 
-  let result = await axios.get(API);
-  result = result.data.results.map((r, i) => ({
+  let result = await fetch(API);
+  result = await result.json();
+  result = result.results.map((r, i) => ({
     id: i + 1,
     name: r.name,
   }));
